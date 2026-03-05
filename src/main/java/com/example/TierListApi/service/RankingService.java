@@ -37,7 +37,12 @@ public class RankingService {
     }
 
     public Ranking updateRanking(Ranking ranking){
-        return rankingRepo.save(ranking);
+        Ranking existsRanking = findRankingByCharacterId(ranking.getCharacter().getId());
+        existsRanking.setRankImgUrl(ranking.getRankImgUrl());
+        existsRanking.setStory(ranking.getStory());
+        existsRanking.setBoss(ranking.getBoss());
+        existsRanking.setPvp(ranking.getPvp());
+        return rankingRepo.save(existsRanking);
     }
 
     public void deleteRanking(long id){
