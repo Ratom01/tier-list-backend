@@ -23,11 +23,11 @@ public class Skill {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
     private Integer ammo;
-    private Integer reloadTime;
+    private Float reloadTime;
     private Integer cooldown;
 
     public Skill(){}
-    public Skill(Long id, Character character, String name, SkillType type, boolean active, String description, Integer ammo, Integer reloadTime, Integer cooldown) {
+    public Skill(Long id, Character character, String name, SkillType type, boolean active, String description, Integer ammo, Float reloadTime, Integer cooldown) {
         this.id = id;
         this.character = character;
         this.name = name;
@@ -95,11 +95,11 @@ public class Skill {
         this.ammo = ammo;
     }
 
-    public Integer getReloadTime() {
+    public Float getReloadTime() {
         return reloadTime;
     }
 
-    public void setReloadTime(Integer reloadTime) {
+    public void setReloadTime(Float reloadTime) {
         this.reloadTime = reloadTime;
     }
 
